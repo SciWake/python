@@ -1,0 +1,7 @@
+
+house_py/examples/__pycache__/
+venv/
+
+house_py/.ipynb_checkpoints/Untitled-checkpoint.ipynb
+
+*.pyc
