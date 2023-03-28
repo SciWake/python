@@ -1,1 +1,3 @@
-/venv
+/venvv
+house_py/examples/__pycache__/
+.idea/
