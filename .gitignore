@@ -1,3 +1,9 @@
 /venvv
 house_py/examples/__pycache__/
 .idea/
+
+venv/
+
+Lesson_8/__pycache__/
+
+Lesson_10/.ipynb_checkpoints/
