@@ -62,11 +62,34 @@ def put_data():
     if number_file == 1:  # Можно сделать нумерацию внутри файла
         print("Какую именно запись по счету Вы хотите изменить?")
         number_journal = int(input('Введите номер записи: '))
+
         # ТУТ НАПИСАТЬ КОД
+        # Можно добавить проверку, чтобы человек не выходил за пределы записей
+        print(f'Изменить данную запись\n{data_first[number_journal]}')
+        name = name_data()
+        surname = surname_data()
+        phone = phone_data()
+        address = address_data()
+        data_first = data_first[:number_journal] + [f'{name}\n{surname}\n{phone}\n{address}\n'] + \
+                     data_first[number_journal + 1:]
+        with open('data_first_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_first))
+        print('Изменения успешно сохранены!')
     else:
         print("Какую именно запись по счету Вы хотите изменить?")
         number_journal = int(input('Введите номер записи: '))
         # ТУТ НАПИСАТЬ КОД
+        # Можно добавить проверку, чтобы человек не выходил за пределы записи
+        print(f'Изменить данную запись\n{data_second[number_journal]}')
+        name = name_data()
+        surname = surname_data()
+        phone = phone_data()
+        address = address_data()
+        data_second = data_second[:number_journal] + [f'{name};{surname};{phone};{address}\n'] + \
+                      data_second[number_journal + 1:]
+        with open('data_second_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_second))
+        print('Изменения успешно сохранены!')  # Можно вывести конечные данные
 
 
 def delete_data():
@@ -83,8 +106,18 @@ def delete_data():
         number_journal = int(input('Введите номер записи: '))
         # Можно добавить проверку, чтобы человек не выходил за пределы записи
         # ТУТ НАПИСАТЬ КОД
+        print(f'Удалить данную запись\n{data_first[number_journal - 1]}')
+        data_first = data_first[:number_journal] + data_first[number_journal + 1:]
+        with open('data_first_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_first))
+        print('Изменения успешно сохранены!')
     else:
         print("Какую именно запись по счету Вы хотите удалить?")
         number_journal = int(input('Введите номер записи: '))
         # Можно добавить проверку, чтобы человек не выходил за пределы записи
         # ТУТ НАПИСАТЬ КОД
+        print(f'Удалить данную запись\n{data_second[number_journal - 1]}')
+        data_second = data_second[:number_journal] + data_second[number_journal + 1:]
+        with open('data_second_variant.csv', 'w', encoding='utf-8') as file:
+            file.write(''.join(data_second))
+        print('Изменения успешно сохранены!')  # Можно вывести конечные данные

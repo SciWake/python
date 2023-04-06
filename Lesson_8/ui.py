@@ -1,5 +1,5 @@
-from sctipt import input_data, print_data, delete_data, put_data
-
+from script import input_data, print_data, delete_data, put_data
+import pandas
 
 def interface():
     print('Доброго времени суток! Вы попали на специальную программу от нашей группы! Что же мы можем делать?\n'
@@ -21,4 +21,3 @@ def interface():
         put_data()
     else:
         print_data()
-        
